@@ -2,14 +2,16 @@
 
 namespace App\Model;
 
-use Illuminate\Database\Eloquent\Model;
+class Breeding extends Eloquent {
 
-class Breeding extends Model 
-{
+	protected $table = 'breedings';
+	public $timestamps = true;
+	protected $fillable = array('name', 'nb_unicorn', 'unit_cost_HT', 'gender', 'company_id');
+	protected $visible = array('name', 'nb_unicorn', 'unit_cost_HT', 'gender', 'company_id');
 
-    protected $table = 'breedings';
-    public $timestamps = true;
-    protected $fillable = array('name', 'nb_unicorn', 'unit_cost_HT', 'gender', 'owner_id');
-    protected $visible = array('name', 'nb_unicorn', 'unit_cost_HT', 'gender', 'owner_id');
+	public function companies()
+	{
+		return $this->belongsTo('App\Model\Company', 'company_id');
+	}
 
 }

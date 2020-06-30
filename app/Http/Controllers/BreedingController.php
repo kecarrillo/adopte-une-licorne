@@ -1,11 +1,6 @@
 <?php 
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class BreedingController extends Controller 
-{
+class BreedingController extends BaseController {
 
   /**
    * Display a listing of the resource.
@@ -32,7 +27,7 @@ class BreedingController extends Controller
    *
    * @return Response
    */
-  public function store(Request $request)
+  public function store()
   {
     
   }

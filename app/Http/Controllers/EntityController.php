@@ -1,6 +1,6 @@
 <?php 
 
-class CompanyController extends BaseController {
+class EntityController extends BaseController {
 
   /**
    * Display a listing of the resource.

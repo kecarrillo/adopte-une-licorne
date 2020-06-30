@@ -3,21 +3,21 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCommandsTable extends Migration {
+class CreateBredsTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('commands', function(Blueprint $table) {
+		Schema::create('breds', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
+			$table->date('date');
 			$table->integer('unicorn_id')->unsigned()->nullable();
 			$table->integer('customer_id')->unsigned()->nullable();
-			$table->integer('quantity')->default('1');
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('commands');
+		Schema::drop('breds');
 	}
 }

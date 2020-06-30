@@ -1,11 +1,6 @@
 <?php 
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class UnicornController extends Controller 
-{
+class UnicornController extends BaseController {
 
   /**
    * Display a listing of the resource.
@@ -32,7 +27,7 @@ class UnicornController extends Controller
    *
    * @return Response
    */
-  public function store(Request $request)
+  public function store()
   {
     
   }

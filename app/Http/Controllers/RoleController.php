@@ -1,11 +1,6 @@
 <?php 
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class RoleController extends Controller 
-{
+class RoleController extends BaseController {
 
   /**
    * Display a listing of the resource.
@@ -32,7 +27,7 @@ class RoleController extends Controller
    *
    * @return Response
    */
-  public function store(Request $request)
+  public function store()
   {
     
   }
