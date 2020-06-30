@@ -7,7 +7,7 @@ class CreateEntitiesTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('entities', function(Blueprint $table) {
+		Schema::create('contacts', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
 			$table->string('email', 75);
@@ -23,6 +23,6 @@ class CreateEntitiesTable extends Migration {
 
 	public function down()
 	{
-		Schema::drop('entities');
+		Schema::drop('contacts');
 	}
 }

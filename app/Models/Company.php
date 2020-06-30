@@ -9,11 +9,9 @@ class Company extends Model {
 	protected $table = 'companies';
 	public $timestamps = true;
 	protected $fillable = array(
-	    'is_breeder',
         'company_name',
         'legal_status',
         'customer_id',
-        'entity_id',
         'unicorn_id',
         'breeding_id'
     );
@@ -21,7 +19,6 @@ class Company extends Model {
 	    'company_name',
         'legal_status',
         'customer_id',
-        'entity_id',
         'bred_id',
         'unicorn_id',
         'breeding_id'
@@ -33,9 +30,9 @@ class Company extends Model {
 		return $this->hasMany('App\Model\Customer', 'customer_id');
 	}
 
-	public function entities()
+	public function contacts()
 	{
-		return $this->belongsTo('App\Model\Entity', 'entity_id');
+		return $this->belongsTo('App\Model\Contact', 'contact_id');
 	}
 
 	public function unicorns()

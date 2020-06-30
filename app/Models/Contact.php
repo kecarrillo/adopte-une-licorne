@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Entity extends Model {
+class Contact extends Model {
 
-	protected $table = 'entities';
+	protected $table = 'contacts';
 	public $timestamps = true;
 	protected $fillable = array('email', 'phone', 'wording_address', 'town', 'zip_code', 'country', 'company_id', 'customer_id');
 	protected $visible = array('email', 'phone', 'wording_address', 'town', 'zip_code', 'country', 'company_id', 'customer_id');

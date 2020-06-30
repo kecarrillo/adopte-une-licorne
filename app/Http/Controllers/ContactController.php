@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-class EntityController extends BaseController {
+class ContactController extends BaseController {
 
   /**
    * Display a listing of the resource.
@@ -9,7 +9,7 @@ class EntityController extends BaseController {
    */
   public function index()
   {
-    
+
   }
 
   /**
@@ -19,7 +19,7 @@ class EntityController extends BaseController {
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -29,7 +29,7 @@ class EntityController extends BaseController {
    */
   public function store()
   {
-    
+
   }
 
   /**
@@ -40,7 +40,7 @@ class EntityController extends BaseController {
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -51,7 +51,7 @@ class EntityController extends BaseController {
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -62,7 +62,7 @@ class EntityController extends BaseController {
    */
   public function update($id)
   {
-    
+
   }
 
   /**
@@ -73,9 +73,9 @@ class EntityController extends BaseController {
    */
   public function destroy($id)
   {
-    
+
   }
-  
+
 }
 
 ?>

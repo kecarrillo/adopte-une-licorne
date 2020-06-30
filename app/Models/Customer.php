@@ -21,7 +21,7 @@ class Customer extends Model {
 		return $this->belongsToMany('App\Model\Company', 'companies_id');
 	}
 
-	public function entities()
+	public function contacts()
 	{
 		return $this->belongsTo('App\Model\Entity', 'entity_id');
 	}

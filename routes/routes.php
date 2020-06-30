@@ -24,4 +24,4 @@ Route::resource('company', 'CompanyController');
 Route::resource('command', 'CommandController');
 Route::resource('customer', 'CustomerController');
 Route::resource('bred', 'BredController');
-Route::resource('entity', 'EntityController');
+Route::resource('contact', 'ContactController');

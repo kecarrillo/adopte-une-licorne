@@ -10,11 +10,10 @@ class CreateCompaniesTable extends Migration {
 		Schema::create('companies', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
-			$table->boolean('is_breeder')->default(false);
 			$table->string('company_name', 60);
 			$table->string('legal_status', 20);
 			$table->integer('customer_id')->unsigned()->nullable();
-			$table->integer('entity_id')->unsigned()->nullable();
+			$table->integer('contact_id')->unsigned()->nullable();
 			$table->integer('bred_id')->unsigned()->nullable();
 			$table->integer('unicorn_id')->unsigned()->nullable();
 			$table->integer('breeding_id')->unsigned()->nullable();

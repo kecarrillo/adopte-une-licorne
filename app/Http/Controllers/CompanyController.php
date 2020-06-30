@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -39,11 +40,20 @@ class CompanyController extends Controller {
   public function store(Request $request)
   {
       $company = new Company();
+      $contact = new Contact();
+
+      $contact->phone = $request->get('phone');
+      $contact->email = $request->get('email');
+      $contact->wording_address = $request->get('wording_address');
+      $contact->town = $request->get('town');
+      $contact->zip_code = $request->get('zip_code');
+      $contact->country = $request->get('country');
+      $contact->save();
+
       $company->name = $request->get('name');
-      $company->is_breeder = $request->get('is_breeder');
       $company->legal_status = $request->get('legal_status');
       $company->customer_id = $request->get('customer_id', null);
-      $company->entity_id = $request->get('entity_id');
+      $company->contact_id = $request->get('contact_id');
       $company->bred_id = $request->get('bred_id',null);
       $company->unicorn_id = $request->get('unicorn_id', null);
       $company->breeding_id = $request->get('breeding_id', null);
@@ -60,13 +70,13 @@ class CompanyController extends Controller {
    */
   public function show($id)
   {
-      $entity = Company::with('entities')->find($id);
-      $clientele = Company::with('customers')->get($id);
+      $contact = Company::with('contacts')->find($id);
+      $customer = Company::with('customers')->get($id);
       $unicorn = Company::with('unicorns')->get($id);
       $breeding = Company::with('breedings')->get($id);
       $bred = Company::with('breds')->get($id);
 
-      return view('companies.show', compact('entity', 'clientele', 'unicorn', 'bred', 'breeding'));
+      return view('companies.show', compact('contact', 'customer', 'unicorn', 'bred', 'breeding'));
   }
 
   /**
@@ -93,10 +103,9 @@ class CompanyController extends Controller {
   {
       $company = Company::find($id);
       $company->name = $request->get('name');
-      $company->is_breeder = $request->get('is_breeder');
       $company->legal_status = $request->get('legal_status');
       $company->customer_id = $request->get('customer_id');
-      $company->entity_id = $request->get('entity_id');
+      $company->contact_id = $request->get('contact_id');
       $company->bred_id = $request->get('bred_id');
       $company->unicorn_id = $request->get('unicorn_id');
       $company->breeding_id = $request->get('breeding_id');
