@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
-class Bred extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Bred extends Model {
 
 	protected $table = 'breds';
 	public $timestamps = true;

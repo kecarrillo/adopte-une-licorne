@@ -14,7 +14,6 @@ class CreateCompaniesTable extends Migration {
 			$table->string('company_name', 60);
 			$table->string('legal_status', 20);
 			$table->integer('customer_id')->unsigned()->nullable();
-			$table->integer('clientele_id')->unsigned()->nullable();
 			$table->integer('entity_id')->unsigned()->nullable();
 			$table->integer('bred_id')->unsigned()->nullable();
 			$table->integer('unicorn_id')->unsigned()->nullable();

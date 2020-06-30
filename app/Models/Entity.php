@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
-class Entity extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Entity extends Model {
 
 	protected $table = 'entities';
 	public $timestamps = true;

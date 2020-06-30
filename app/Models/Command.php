@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
-class Command extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Command extends Model {
 
 	protected $table = 'commands';
 	public $timestamps = true;

@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
-class Customer extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Customer extends Model {
 
 	protected $table = 'customers';
 	public $timestamps = true;

@@ -1,22 +1,36 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
-class Company extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Company extends Model {
 
 	protected $table = 'companies';
 	public $timestamps = true;
-	protected $fillable = array('is_breeder', 'company_name', 'legal_status', 'customer_id', 'clientele_id', 'entity_id', 'unicorn_id', 'breeding_id');
-	protected $visible = array('company_name', 'legal_status', 'customer_id', 'clientele_id', 'entity_id', 'bred_id', 'unicorn_id', 'breeding_id');
+	protected $fillable = array(
+	    'is_breeder',
+        'company_name',
+        'legal_status',
+        'customer_id',
+        'entity_id',
+        'unicorn_id',
+        'breeding_id'
+    );
+	protected $visible = array(
+	    'company_name',
+        'legal_status',
+        'customer_id',
+        'entity_id',
+        'bred_id',
+        'unicorn_id',
+        'breeding_id'
+    );
+
 
 	public function customers()
 	{
-		return $this->belongsTo('App\Model\Customer', 'customer_id');
-	}
-
-	public function has_customers()
-	{
-		return $this->hasMany('App\Model\Customer', 'clientele_id');
+		return $this->hasMany('App\Model\Customer', 'customer_id');
 	}
 
 	public function entities()

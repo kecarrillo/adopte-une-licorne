@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
-class Unicorn extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Unicorn extends Model {
 
 	protected $table = 'unicorns';
 	public $timestamps = true;

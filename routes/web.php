@@ -17,13 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// TODO add names
 Route::resource('user', 'UserController');
 Route::resource('role', 'RoleController');
 Route::resource('unicorn', 'UnicornController');
 Route::resource('breeding', 'BreedingController');
 Route::resource('company', 'CompanyController');
-Route::resource('adress', 'AdressController');
+Route::resource('address', 'AddressController');
 Route::resource('command', 'CommandController');
 Route::resource('customer', 'CustomerController');
 Route::resource('bred', 'BredController');
