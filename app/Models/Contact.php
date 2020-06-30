@@ -13,12 +13,12 @@ class Contact extends Model {
 
 	public function customers()
 	{
-		return $this->hasMany('App\Model\Customer', 'customer_id');
+		return $this->hasMany('App\Models\Customer', 'customer_id');
 	}
 
 	public function companies()
 	{
-		return $this->hasMany('App\Model\Company', 'company_id');
+		return $this->hasMany('App\Models\Company', 'company_id');
 	}
 
 }

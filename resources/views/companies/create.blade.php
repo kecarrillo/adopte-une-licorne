@@ -9,7 +9,7 @@
 
                     <div class="card-body">
 
-                        <a href="{{ route('companies') }}" class="btn btn-danger" title="Retour vers companies">
+                        <a href="{{ route('companies.index') }}" class="btn btn-danger" title="Retour vers companies">
                             Entreprises
                         </a>
 
@@ -23,7 +23,7 @@
                                 <input id="legal_status" type="text" name="legal_status">
 
                                 <label for="name">Nom de l'entreprise</label>
-                                <input id="name" type="text" name="name">
+                                <input id="name" type="text" name="company_name">
 
                             </fieldset>
 

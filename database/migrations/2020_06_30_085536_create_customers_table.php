@@ -14,7 +14,7 @@ class CreateCustomersTable extends Migration {
 			$table->string('lastname', 60)->nullable();
 			$table->integer('company_id')->unsigned()->nullable();
 			$table->integer('companies_id')->unsigned()->nullable();
-			$table->integer('entity_id')->unsigned()->nullable();
+			$table->integer('contact_id')->unsigned()->nullable();
 			$table->integer('bred_id')->unsigned()->nullable();
 		});
 	}

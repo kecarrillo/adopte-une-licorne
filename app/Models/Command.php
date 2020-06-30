@@ -13,12 +13,12 @@ class Command extends Model {
 
 	public function customers()
 	{
-		return $this->belongsTo('App\Model\Customer', 'customer_id');
+		return $this->belongsTo('App\Models\Customer', 'customer_id');
 	}
 
 	public function breedings()
 	{
-		return $this->hasOne('App\Model\Breeding', 'breeding_id');
+		return $this->hasOne('App\Models\Breeding', 'breeding_id');
 	}
 
 }

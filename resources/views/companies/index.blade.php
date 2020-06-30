@@ -21,7 +21,7 @@
                             @foreach($companies as $company)
                                 <li>
                                     <a href="{{ route('companies.show', $company->id) }}">
-                                        {{ $company->legal_status }} {{ $company->name }}
+                                        {{ $company->legal_status }} {{ $company->company_name }}
                                     </a>
                                 </li>
                             @endforeach

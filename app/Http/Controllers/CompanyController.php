@@ -50,7 +50,7 @@ class CompanyController extends Controller {
       $contact->country = $request->get('country');
       $contact->save();
 
-      $company->name = $request->get('name');
+      $company->company_name = $request->get('company_name');
       $company->legal_status = $request->get('legal_status');
       $company->customer_id = $request->get('customer_id', null);
       $company->contact_id = $request->get('contact_id');
@@ -70,13 +70,14 @@ class CompanyController extends Controller {
    */
   public function show($id)
   {
-      $contact = Company::with('contacts')->find($id);
-      $customer = Company::with('customers')->get($id);
-      $unicorn = Company::with('unicorns')->get($id);
-      $breeding = Company::with('breedings')->get($id);
-      $bred = Company::with('breds')->get($id);
+      $company = Company::with('contacts')->find($id);
+//      $customer = Company::with('customers')->get($id);
+//      $unicorn = Company::with('unicorns')->get($id);
+//      $breeding = Company::with('breedings')->get($id);
+//      $bred = Company::with('breds')->get($id);
 
-      return view('companies.show', compact('contact', 'customer', 'unicorn', 'bred', 'breeding'));
+      return view('companies.show', compact('company'));
+
   }
 
   /**

@@ -17,8 +17,8 @@
 			{{ Form::text('customer_id') }}
 		</li>
 		<li>
-			{{ Form::label('clientele_id', 'Clientele_id:') }}
-			{{ Form::text('clientele_id') }}
+			{{ Form::label('customer_id', 'Customer_id:') }}
+			{{ Form::text('customer_id') }}
 		</li>
 		<li>
 			{{ Form::label('entity_id', 'Entity_id:') }}

@@ -13,12 +13,12 @@ class Bred extends Model {
 
 	public function unicorns()
 	{
-		return $this->hasOne('App\Model\Unicorn', 'unicorn_id');
+		return $this->hasOne('App\Models\Unicorn', 'unicorn_id');
 	}
 
 	public function customers()
 	{
-		return $this->belongsTo('App\Model\Customer', 'customer_id');
+		return $this->belongsTo('App\Models\Customer', 'customer_id');
 	}
 
 }

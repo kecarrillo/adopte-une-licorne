@@ -8,22 +8,22 @@ class Customer extends Model {
 
 	protected $table = 'customers';
 	public $timestamps = true;
-	protected $fillable = array('firstname', 'lastname', 'company_id', 'companies_id', 'entity_id');
-	protected $visible = array('firstname', 'lastname', 'company_id', 'companies_id', 'entity_id', 'bred_id');
+	protected $fillable = array('firstname', 'lastname', 'company_id', 'companies_id', 'contact_id');
+	protected $visible = array('firstname', 'lastname', 'company_id', 'companies_id', 'contact_id', 'bred_id');
 
 	public function companies()
 	{
-		return $this->hasOne('App\Model\Company', 'company_id');
+		return $this->hasOne('App\Models\Company', 'company_id');
 	}
 
 	public function is_customer_of()
 	{
-		return $this->belongsToMany('App\Model\Company', 'companies_id');
+		return $this->belongsToMany('App\Models\Company', 'companies_id');
 	}
 
 	public function contacts()
 	{
-		return $this->belongsTo('App\Model\Entity', 'entity_id');
+		return $this->belongsTo('App\Models\Contact', 'contact_id');
 	}
 
 }

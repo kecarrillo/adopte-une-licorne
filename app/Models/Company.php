@@ -9,6 +9,7 @@ class Company extends Model {
 	protected $table = 'companies';
 	public $timestamps = true;
 	protected $fillable = array(
+	    'name',
         'company_name',
         'legal_status',
         'customer_id',
@@ -16,6 +17,7 @@ class Company extends Model {
         'breeding_id'
     );
 	protected $visible = array(
+	    'name',
 	    'company_name',
         'legal_status',
         'customer_id',
@@ -27,22 +29,22 @@ class Company extends Model {
 
 	public function customers()
 	{
-		return $this->hasMany('App\Model\Customer', 'customer_id');
+		return $this->hasMany('App\Models\Customer', 'customer_id');
 	}
 
 	public function contacts()
 	{
-		return $this->belongsTo('App\Model\Contact', 'contact_id');
+		return $this->belongsTo('App\Models\Contact', 'contact_id');
 	}
 
 	public function unicorns()
 	{
-		return $this->hasMany('App\Model\Unicorn', 'unicorn_id');
+		return $this->hasMany('App\Models\Unicorn', 'unicorn_id');
 	}
 
 	public function breedings()
 	{
-		return $this->hasMany('App\Model\Breeding', 'breeding_id');
+		return $this->hasMany('App\Models\Breeding', 'breeding_id');
 	}
 
 }

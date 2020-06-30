@@ -13,7 +13,7 @@ class Breeding extends Model {
 
 	public function companies()
 	{
-		return $this->belongsTo('App\Model\Company', 'company_id');
+		return $this->belongsTo('App\Models\Company', 'company_id');
 	}
 
 }
