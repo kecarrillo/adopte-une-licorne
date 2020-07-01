@@ -53,7 +53,9 @@ class ContactController extends BaseController {
    */
   public function edit($id)
   {
+      $contact = Contact::find($id);
 
+      return view('contacts.edit', compact('contact'));
   }
 
   /**

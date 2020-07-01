@@ -108,8 +108,20 @@ class CompanyController extends Controller {
    */
   public function update(Request $request, $id)
   {
+      $contact = Contact::find($request->get('contact_id'));
+//      dd(Contact::find($request->get('contact_id')));
+
+      $contact->phone = $request->get('phone');
+      $contact->email = $request->get('email');
+      $contact->wording_address = $request->get('wording_address', null);
+      $contact->town = $request->get('town',null);
+      $contact->zip_code = $request->get('zip_code', null);
+      $contact->country = $request->get('country', null);
+      $contact->save();
+
       $company = Company::find($id);
-      $company->name = $request->get('name');
+
+      $company->company_name = $request->get('company_name');
       $company->legal_status = $request->get('legal_status');
       $company->customer_id = $request->get('customer_id');
       $company->contact_id = $request->get('contact_id');
