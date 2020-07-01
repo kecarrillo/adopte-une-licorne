@@ -40,24 +40,34 @@ class CompanyController extends Controller {
   public function store(Request $request)
   {
       $company = new Company();
-      $contact = new Contact();
+//      $contact = new Contact();
+
+      $contact = Contact::create([
+          'phone' => $request->get('phone'),
+          'email' => $request->get('email'),
+          'wording_address' => $request->get('wording_address', null),
+          'town' => $request->get('town',null),
+          'zip_code' => $request->get('zip_code', null),
+          'country' => $request->get('country', null),
+      ]);
 
       $company->company_name = $request->get('company_name');
       $company->legal_status = $request->get('legal_status');
       $company->customer_id = $request->get('customer_id', null);
+      $company->contact_id = $contact['id'];
       $company->bred_id = $request->get('bred_id',null);
       $company->unicorn_id = $request->get('unicorn_id', null);
       $company->breeding_id = $request->get('breeding_id', null);
       $company->save();
 
-      $contact->phone = $request->get('phone');
-      $contact->email = $request->get('email');
-      $contact->wording_address = $request->get('wording_address');
-      $contact->town = $request->get('town');
-      $contact->zip_code = $request->get('zip_code');
-      $contact->country = $request->get('country');
-      $contact->company_id = $request->get('company_id');
-      $contact->save();
+//      $contact->phone = $request->get('phone');
+//      $contact->email = $request->get('email');
+//      $contact->wording_address = $request->get('wording_address');
+//      $contact->town = $request->get('town');
+//      $contact->zip_code = $request->get('zip_code');
+//      $contact->country = $request->get('country');
+//      $contact->company_id = $request->get($company['company_name']);
+//      $contact->save();
 
       return redirect()->route('companies.index');
   }
