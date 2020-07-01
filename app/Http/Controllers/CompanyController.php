@@ -42,10 +42,6 @@ class CompanyController extends Controller {
       $company = new Company();
       $contact = new Contact();
 
-//      $contact_id = Company::find(1)->contacts->where('id', $contact->id)->first();
-//      echo "<script>alert('id contact: " . $contact_id . "' );</script>";
-//      echo "<script>alert('Contact: " . $contact . "' );</script>";
-
       $company->company_name = $request->get('company_name');
       $company->legal_status = $request->get('legal_status');
       $company->customer_id = $request->get('customer_id', null);

@@ -12,11 +12,21 @@ class CreateCompaniesTable extends Migration {
 			$table->timestamps();
 			$table->string('company_name', 60);
 			$table->string('legal_status', 20);
-			$table->integer('customer_id')->unsigned()->nullable();
-			$table->integer('contact_id')->unsigned()->nullable();
-			$table->integer('bred_id')->unsigned()->nullable();
-			$table->integer('unicorn_id')->unsigned()->nullable();
-			$table->integer('breeding_id')->unsigned()->nullable();
+			$table->bigInteger('customer_id')->unsigned()->nullable();
+			$table->bigInteger('contact_id')->unsigned()->nullable();
+			$table->bigInteger('bred_id')->unsigned()->nullable();
+			$table->bigInteger('unicorn_id')->unsigned()->nullable();
+			$table->bigInteger('breeding_id')->unsigned()->nullable();
+			$table->foreign('customer_id')->references('id')->on('customers')
+                ->onDelete('SET NULL');
+            $table->foreign('contact_id')->references('id')->on('contacts')
+                ->onDelete('SET NULL');
+            $table->foreign('bred_id')->references('id')->on('breds')
+                ->onDelete('SET NULL');
+            $table->foreign('unicorn_id')->references('id')->on('unicorns')
+                ->onDelete('SET NULL');
+            $table->foreign('breeding_id')->references('id')->on('breedings')
+                ->onDelete('SET NULL');
 		});
 	}
 

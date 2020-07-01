@@ -36,7 +36,7 @@ class Company extends Model {
 
 	public function contacts()
 	{
-		return $this->hasOne('App\Models\Contact', 'id');
+		return $this->hasOne(Contact::class, 'id');
 	}
 
 	public function unicorns()
