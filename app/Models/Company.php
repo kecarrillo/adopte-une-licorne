@@ -12,6 +12,7 @@ class Company extends Model {
 	    'name',
         'company_name',
         'legal_status',
+        'contact_id',
         'customer_id',
         'unicorn_id',
         'breeding_id'
@@ -23,6 +24,7 @@ class Company extends Model {
         'customer_id',
         'bred_id',
         'unicorn_id',
+        'contact_id',
         'breeding_id'
     );
 
@@ -34,7 +36,7 @@ class Company extends Model {
 
 	public function contacts()
 	{
-		return $this->belongsTo('App\Models\Contact', 'contact_id');
+		return $this->hasOne('App\Models\Contact', 'id');
 	}
 
 	public function unicorns()

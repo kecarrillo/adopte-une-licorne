@@ -19,7 +19,9 @@ class ContactController extends BaseController {
    */
   public function create()
   {
+      $companies = Company::all();
 
+      return view('contacts.create', compact(companies));
   }
 
   /**
