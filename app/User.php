@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Company;
 use App\Models\Role;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -17,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password'
+        'name', 'email', 'password', 'role_id', 'company_id'
     ];
 
     /**
@@ -45,6 +46,11 @@ class User extends Authenticatable
      */
     public function roles()
     {
-        return $this->hasMany(Role::class);
+        return $this->hasMany(Role::class, 'id');
+    }
+
+    public function companies()
+    {
+        return $this->hasOne(Company::class, 'company_id');
     }
 }

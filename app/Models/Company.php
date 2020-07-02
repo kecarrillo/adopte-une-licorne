@@ -49,4 +49,9 @@ class Company extends Model {
 		return $this->hasMany('App\Models\Breeding', 'breeding_id');
 	}
 
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'id');
+    }
+
 }

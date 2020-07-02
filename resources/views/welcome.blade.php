@@ -68,7 +68,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/connexion') }}">Connexion</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -79,20 +79,24 @@
                 </div>
             @endif
 
+            <figure>
+                <img src="https://cdn.shopify.com/s/files/1/1365/2497/files/Are_YOU_a_Secret_Unicorn_6692006541_o_7ac1e889-d11e-4011-b4e3-919c07351c8d_large.jpg?v=1519489721"
+                     alt="unicorn to sell"
+                     class="fit-picture" />
+
+                <figcaption>Licorne à vendre</figcaption>
+            </figure>
+
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Adopte une licorne
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ route('companies.index') }}">Entreprises</a>
+                    <a href="{{ route('unicorns.index') }}">Licornes</a>
+                    <a href="{{ route('breedings.index') }}">Elevages</a>
+                    <a href="{{ route('customers.create') }}">Devenir client</a>
                 </div>
             </div>
         </div>
