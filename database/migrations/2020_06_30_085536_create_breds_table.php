@@ -12,7 +12,9 @@ class CreateBredsTable extends Migration {
 			$table->timestamps();
 			$table->date('date');
 			$table->integer('unicorn_id')->unsigned()->nullable();
-			$table->integer('customer_id')->unsigned()->nullable();
+			$table->bigInteger('company_id')->unsigned()->nullable();
+			$table->foreign('company_id')->references('id')->on('companies')
+                ->onDelete('SET NULL');
 		});
 	}
 
