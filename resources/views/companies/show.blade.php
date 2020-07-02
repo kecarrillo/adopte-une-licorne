@@ -39,11 +39,11 @@
 
                         <h3>Licornes reproductrices</h3>
 
-                        @if(!is_null($company->unicorn_id))
-                            @foreach($unicorns as $unicorn)
+                        @if(!is_null($company->unicorns))
+                            @foreach($company->unicorns as $unicorn)
                             <li>
-                                <a href="{{ route('unicorn.show', $company->unicorn->id) }}">
-                                    {{ $company->unicorn->name }}
+                                <a href="{{ route('unicorns.show', $unicorn->id) }}">
+                                    {{ $unicorn->name }}
                                 </a>
                             </li>
                             @endforeach

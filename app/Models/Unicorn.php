@@ -18,6 +18,7 @@ class Unicorn extends Model {
 		'unit_cost_HT'
 	);
 	protected $visible = array(
+	    'id',
 		'age',
 	 	'name',
 	  	'mating_season',

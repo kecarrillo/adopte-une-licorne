@@ -33,7 +33,7 @@ class Company extends Model {
 
 	public function unicorns()
 	{
-		return $this->hasMany('App\Models\Unicorn', 'unicorn_id');
+		return $this->hasMany(Unicorn::class, 'company_id');
 	}
 
 	public function breedings()
