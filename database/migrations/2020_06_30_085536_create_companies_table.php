@@ -12,13 +12,10 @@ class CreateCompaniesTable extends Migration {
 			$table->timestamps();
 			$table->string('company_name', 60);
 			$table->string('legal_status', 20);
-			$table->bigInteger('customer_id')->unsigned()->nullable();
 			$table->bigInteger('contact_id')->unsigned()->nullable();
 			$table->bigInteger('bred_id')->unsigned()->nullable();
 			$table->bigInteger('unicorn_id')->unsigned()->nullable();
 			$table->bigInteger('breeding_id')->unsigned()->nullable();
-			$table->foreign('customer_id')->references('id')->on('customers')
-                ->onDelete('SET NULL');
             $table->foreign('contact_id')->references('id')->on('contacts')
                 ->onDelete('SET NULL');
             $table->foreign('bred_id')->references('id')->on('breds')

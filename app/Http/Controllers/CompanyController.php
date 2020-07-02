@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Contact;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller {
 
@@ -39,9 +41,7 @@ class CompanyController extends Controller {
    */
   public function store(Request $request)
   {
-//      $company = new Company();
-      $user = auth()->user();
-      $user = Contact::find($user->id);
+      $current_user = Auth::user();
 
       $contact = Contact::create([
           'phone' => $request->get('phone'),
@@ -63,8 +63,8 @@ class CompanyController extends Controller {
       ]);
       $company->save();
 
-      $user->company_id = $company['company_id'];
-      $user->save();
+      $current_user->company_id = $company['id'];
+      $current_user->save();
 
       return redirect()->route('companies.index');
   }

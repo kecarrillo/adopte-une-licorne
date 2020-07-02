@@ -18,16 +18,6 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('restrict');
 		});
 		Schema::table('companies', function(Blueprint $table) {
-			$table->foreign('customer_id')->references('id')->on('customers')
-						->onDelete('set null')
-						->onUpdate('restrict');
-		});
-		Schema::table('companies', function(Blueprint $table) {
-			$table->foreign('customer_id')->references('id')->on('customers')
-						->onDelete('set null')
-						->onUpdate('restrict');
-		});
-		Schema::table('companies', function(Blueprint $table) {
 			$table->foreign('contact_id')->references('id')->on('contacts')
 						->onDelete('set null')
 						->onUpdate('restrict');
@@ -106,12 +96,6 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('breedings', function(Blueprint $table) {
 			$table->dropForeign('breedings_company_id_foreign');
-		});
-		Schema::table('companies', function(Blueprint $table) {
-			$table->dropForeign('companies_customer_id_foreign');
-		});
-		Schema::table('companies', function(Blueprint $table) {
-			$table->dropForeign('companies_customer_id_foreign');
 		});
 		Schema::table('companies', function(Blueprint $table) {
 			$table->dropForeign('companies_contact_id_foreign');

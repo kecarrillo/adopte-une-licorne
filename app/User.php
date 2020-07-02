@@ -40,7 +40,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Role of the user
+     * User's role
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -49,8 +49,13 @@ class User extends Authenticatable
         return $this->hasMany(Role::class, 'id');
     }
 
+    /**
+     * User's bound company
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function companies()
     {
-        return $this->hasOne(Company::class, 'company_id');
+        return $this->hasOne(Company::class, 'id');
     }
 }

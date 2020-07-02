@@ -13,7 +13,6 @@ class Company extends Model {
         'company_name',
         'legal_status',
         'contact_id',
-        'customer_id',
         'unicorn_id',
         'breeding_id'
     );
@@ -21,18 +20,11 @@ class Company extends Model {
 	    'name',
 	    'company_name',
         'legal_status',
-        'customer_id',
         'bred_id',
         'unicorn_id',
         'contact_id',
         'breeding_id'
     );
-
-
-	public function customers()
-	{
-		return $this->hasMany('App\Models\Customer', 'customer_id');
-	}
 
 	public function contacts()
 	{
@@ -51,7 +43,7 @@ class Company extends Model {
 
     public function users()
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsToMany(User::class, 'company_id');
     }
 
 }

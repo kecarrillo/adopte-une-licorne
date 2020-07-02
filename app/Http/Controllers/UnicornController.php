@@ -48,7 +48,7 @@ class UnicornController extends Controller {
     $unicorn->date_start_mating_season = $request->get('date_start_mating_season');
     $unicorn->nb_mating = $request->get('nb_mating');
     $unicorn->unit_cost_HT = $request->get('unit_cost_HT');
-    $unicorn->company_id = $user->id;
+    $unicorn->company_id = $user->company_id;
     $unicorn->save();
 
     return redirect()->route('unicorns.index');
