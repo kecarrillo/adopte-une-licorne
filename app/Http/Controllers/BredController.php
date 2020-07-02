@@ -41,10 +41,10 @@ class BredController extends Controller {
   public function store(Request $request)
   {
     $bred = new bred();
-    $user = auth()->user();
+    $current_user = Auth::user();
 
     
-    $bred->company_id = $user->company_id;
+    $bred->company_id = $user['id'];
     $bred->save();
 
     return redirect()->route('breds.index');
@@ -84,13 +84,7 @@ class BredController extends Controller {
   public function update($id, Request $request)
   {
     $bred = bred::find($id);
-    $bred->age = $request->get('age');
-    $bred->name = $request->get('name');
-    $bred->mating_season = $request->get('mating_season');
-    $bred->date_start_mating_season = $request->get('date_start_mating_season');
-    $bred->nb_mating = $request->get('nb_mating');
-    $bred->unit_cost_HT = $request->get('unit_cost_HT');
-    $bred->company_id = $request->get('company_id');
+    
     $bred->save();
 
     return redirect()->route('breds.index');
