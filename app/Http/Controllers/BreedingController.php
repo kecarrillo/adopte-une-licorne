@@ -19,7 +19,9 @@ class BreedingController extends BaseController {
    */
   public function create()
   {
-    
+    $companies = Company::all();
+
+    return view('breedings.create', compact(companies));
   }
 
   /**
@@ -51,7 +53,9 @@ class BreedingController extends BaseController {
    */
   public function edit($id)
   {
-    
+    $breeding = Breeding::find($id);
+
+    return view('breedings.edit', compact('breeding'));
   }
 
   /**
