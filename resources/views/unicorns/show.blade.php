@@ -1,43 +1,49 @@
-{{ Form::open(array('route' => 'route.name', 'method' => 'POST')) }}
-	<ul>
-		<li>
-			{{ Form::label('is_breeder', 'Is_breeder:') }}
-			{{ Form::text('is_breeder') }}
-		</li>
-		<li>
-			{{ Form::label('company_name', 'Company_name:') }}
-			{{ Form::text('company_name') }}
-		</li>
-		<li>
-			{{ Form::label('legal_status', 'Legal_status:') }}
-			{{ Form::text('legal_status') }}
-		</li>
-		<li>
-			{{ Form::label('customer_id', 'Customer_id:') }}
-			{{ Form::text('customer_id') }}
-		</li>
-		<li>
-			{{ Form::label('customer_id', 'Customer_id:') }}
-			{{ Form::text('customer_id') }}
-		</li>
-		<li>
-			{{ Form::label('entity_id', 'Entity_id:') }}
-			{{ Form::text('entity_id') }}
-		</li>
-		<li>
-			{{ Form::label('bred_id', 'Bred_id:') }}
-			{{ Form::text('bred_id') }}
-		</li>
-		<li>
-			{{ Form::label('unicorn_id', 'Unicorn_id:') }}
-			{{ Form::text('unicorn_id') }}
-		</li>
-		<li>
-			{{ Form::label('breeding_id', 'Breeding_id:') }}
-			{{ Form::text('breeding_id') }}
-		</li>
-		<li>
-			{{ Form::submit() }}
-		</li>
-	</ul>
-{{ Form::close() }}
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Détails de la licorne</div>
+
+                    <div class="card-body">
+
+{{--                        <a class="btn btn-success" href="{{ route('unicorns.index') }}">Retour aux licornes</a>--}}
+
+{{--                        <a class="btn btn-warning" href="{{ route('unicorns.edit', $unicorn->id) }}">Modifier</a>--}}
+
+{{--                        <form action="{{ route('unicorns.destroy') }}" method="POST">--}}
+{{--                            @csrf--}}
+{{--                            @method('DELETE')--}}
+{{--                            <input type="hidden" name="id" value="{{ $unicorn->id }}">--}}
+{{--                            <button class="btn btn-danger" type="submit">Supprimer</button>--}}
+{{--                        </form>--}}
+
+                        <h2>{{ $unicorn->name }}</h2>
+
+{{--                        <br>--}}
+
+{{--                        <h3>Descriptif:</h3>--}}
+
+{{--                        <p>Age:  {{ $unicorn->age }}</p>--}}
+{{--                        <p>Nombre de reproduction: {{ $unicorn->nb_mating }}</p>--}}
+
+{{--                        @if(!$unicorn->companies->company_name)--}}
+{{--                            <p>Pas de possesseur</p>--}}
+{{--                        @else--}}
+{{--                            <p>Possesseur: {{ $unicorn->companies->company_name }}</p>--}}
+{{--                        @endif--}}
+
+                        <br>
+
+                        <h3>Saison de chaleur:</h3>
+{{--                        <p>Début: {{ $unicorn->date_start_mating_season }}</p>--}}
+{{--                        <p>Durée (en mois): {{ $unicorn->mating_season }}</p>--}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

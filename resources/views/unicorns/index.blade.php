@@ -21,7 +21,7 @@
                             @foreach($unicorns as $unicorn)
                                 <li>
                                     <a href="{{ route('unicorns.show', $unicorn->id) }}">
-                                        {{ $unicorn->legal_status }} {{ $unicorn->unicorn_name }}
+                                        {{ $unicorn->name }} {{ $unicorn->age }}
                                     </a>
                                 </li>
                             @endforeach

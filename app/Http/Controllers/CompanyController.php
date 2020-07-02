@@ -39,8 +39,9 @@ class CompanyController extends Controller {
    */
   public function store(Request $request)
   {
-      $company = new Company();
-//      $contact = new Contact();
+//      $company = new Company();
+      $user = auth()->user();
+      $user = Contact::find($user->id);
 
       $contact = Contact::create([
           'phone' => $request->get('phone'),
@@ -51,23 +52,19 @@ class CompanyController extends Controller {
           'country' => $request->get('country', null),
       ]);
 
-      $company->company_name = $request->get('company_name');
-      $company->legal_status = $request->get('legal_status');
-      $company->customer_id = $request->get('customer_id', null);
-      $company->contact_id = $contact['id'];
-      $company->bred_id = $request->get('bred_id',null);
-      $company->unicorn_id = $request->get('unicorn_id', null);
-      $company->breeding_id = $request->get('breeding_id', null);
+      $company = Company::create([
+          'company_name' => $request->get('company_name'),
+          'legal_status' => $request->get('legal_status'),
+          'customer_id' => $request->get('customer_id', null),
+          'contact_id' => $contact['id'],
+          'bred_id' => $request->get('bred_id',null),
+          'unicorn_id' => $request->get('unicorn_id', null),
+          'breeding_id' => $request->get('breeding_id', null),
+      ]);
       $company->save();
 
-//      $contact->phone = $request->get('phone');
-//      $contact->email = $request->get('email');
-//      $contact->wording_address = $request->get('wording_address');
-//      $contact->town = $request->get('town');
-//      $contact->zip_code = $request->get('zip_code');
-//      $contact->country = $request->get('country');
-//      $contact->company_id = $request->get($company['company_name']);
-//      $contact->save();
+      $user->company_id = $company['company_id'];
+      $user->save();
 
       return redirect()->route('companies.index');
   }
@@ -109,7 +106,6 @@ class CompanyController extends Controller {
   public function update(Request $request, $id)
   {
       $contact = Contact::find($request->get('contact_id'));
-//      dd(Contact::find($request->get('contact_id')));
 
       $contact->phone = $request->get('phone');
       $contact->email = $request->get('email');

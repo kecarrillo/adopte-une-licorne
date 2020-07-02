@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -28,7 +28,7 @@ class UnicornController extends Controller {
   public function create()
   {
     $companies = Company::all();
-    
+
     return view('unicorns.create', compact('companies'));
   }
 
@@ -40,6 +40,7 @@ class UnicornController extends Controller {
   public function store(Request $request)
   {
     $unicorn = new Unicorn();
+    $user = auth()->user();
 
     $unicorn->age = $request->get('age');
     $unicorn->name = $request->get('name');
@@ -47,9 +48,9 @@ class UnicornController extends Controller {
     $unicorn->date_start_mating_season = $request->get('date_start_mating_season');
     $unicorn->nb_mating = $request->get('nb_mating');
     $unicorn->unit_cost_HT = $request->get('unit_cost_HT');
-    $unicorn->company_id = $request->get('company_id');
+    $unicorn->company_id = $user->id;
     $unicorn->save();
-    
+
     return redirect()->route('unicorns.index');
   }
 
@@ -95,7 +96,7 @@ class UnicornController extends Controller {
     $unicorn->unit_cost_HT = $request->get('unit_cost_HT');
     $unicorn->company_id = $request->get('company_id');
     $unicorn->save();
-        
+
     return redirect()->route('unicorns.index');
   }
 
@@ -112,7 +113,7 @@ class UnicornController extends Controller {
 
     return redirect()->route('unicorns.index');
   }
-  
+
 }
 
 ?>
