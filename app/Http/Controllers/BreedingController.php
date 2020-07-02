@@ -39,8 +39,9 @@ class BreedingController extends Controller {
    */
   public function store(Request $request)
   {
-    $breeding = new breeding();
+    $current_user = Auth::user();
 
+    $breeding = new breeding();
     $breeding->name = $request->get('name');
     $breeding->nb_unicorn = $request->get('nb_unicorn');
     $breeding->unit_cost_HT = $request->get('unit_cost_HT');
