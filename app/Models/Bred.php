@@ -8,17 +8,25 @@ class Bred extends Model {
 
 	protected $table = 'breds';
 	public $timestamps = true;
-	protected $fillable = array('date', 'unicorn_id', 'customer_id');
-	protected $visible = array('date', 'unicorn_id', 'customer_id');
+	protected $fillable = array(
+		'date',
+		'unicorn_id',
+		'company_id'
+	);
+	protected $visible = array(
+		'date',
+		'unicorn_id',
+		'company_id'
+	);
 
 	public function unicorns()
 	{
 		return $this->hasOne('App\Models\Unicorn', 'unicorn_id');
 	}
 
-	public function customers()
+	public function companies()
 	{
-		return $this->belongsTo('App\Models\Customer', 'customer_id');
+		return $this->belongsTo(Company::class, 'company_id');
 	}
 
 }
