@@ -111,6 +111,14 @@ abbr[data-original-title] {
           text-decoration-skip-ink: none;
 }
 
+.no-border{
+    border: none;
+}
+
+.no-background{
+    background-color: transparent;
+}
+
 address {
   margin-bottom: 1rem;
   font-style: normal;
