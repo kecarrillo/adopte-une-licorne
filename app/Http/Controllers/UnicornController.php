@@ -62,7 +62,7 @@ class UnicornController extends Controller {
    */
   public function show($id)
   {
-    $unicorn = Unicorn::with('company')->find($id);
+    $unicorn = Unicorn::with('companies')->find($id);
     return view('unicorns.show', compact('unicorn'));
   }
 
