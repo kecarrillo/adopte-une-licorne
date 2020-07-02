@@ -1,6 +1,12 @@
 <?php 
+namespace App\Http\Controllers;
 
-class UnicornController extends BaseController {
+use Illuminate\Http\Request;
+
+use App\Models\Unicorn;
+use App\Models\Company;
+
+class UnicornController extends Controller {
 
   /**
    * Display a listing of the resource.
@@ -9,7 +15,9 @@ class UnicornController extends BaseController {
    */
   public function index()
   {
-    
+    $unicorns = Unicorn::all();
+
+    return view('unicorns.index', compact('unicorns'));
   }
 
   /**
@@ -19,7 +27,9 @@ class UnicornController extends BaseController {
    */
   public function create()
   {
+    $companies = Company::all();
     
+    return view('unicorns.create', compact('companies'));
   }
 
   /**
@@ -27,9 +37,20 @@ class UnicornController extends BaseController {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
+    $unicorn = new Unicorn();
+
+    $unicorn->age = $request->get('age');
+    $unicorn->name = $request->get('name');
+    $unicorn->mating_season = $request->get('mating_season');
+    $unicorn->date_start_mating_season = $request->get('date_start_mating_season');
+    $unicorn->nb_mating = $request->get('nb_mating');
+    $unicorn->unit_cost_HT = $request->get('unit_cost_HT');
+    $unicorn->company_id = $request->get('company_id');
+    $unicorn->save();
     
+    return redirect()->route('unicorns.index');
   }
 
   /**
@@ -40,7 +61,8 @@ class UnicornController extends BaseController {
    */
   public function show($id)
   {
-    
+    $unicorn = Unicorn::with('company')->find($id);
+    return view('unicorns.show', compact('unicorn'));
   }
 
   /**
@@ -51,7 +73,9 @@ class UnicornController extends BaseController {
    */
   public function edit($id)
   {
-    
+    $unicorn = Unicorn::find($id);
+
+    return view('unicorns.edit', compact('unicorn'));
   }
 
   /**
@@ -60,9 +84,19 @@ class UnicornController extends BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function update($id)
+  public function update($id, Request $request)
   {
-    
+    $unicorn = Unicorn::find($id);
+    $unicorn->age = $request->get('age');
+    $unicorn->name = $request->get('name');
+    $unicorn->mating_season = $request->get('mating_season');
+    $unicorn->date_start_mating_season = $request->get('date_start_mating_season');
+    $unicorn->nb_mating = $request->get('nb_mating');
+    $unicorn->unit_cost_HT = $request->get('unit_cost_HT');
+    $unicorn->company_id = $request->get('company_id');
+    $unicorn->save();
+        
+    return redirect()->route('unicorns.index');
   }
 
   /**
@@ -71,9 +105,12 @@ class UnicornController extends BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function destroy($id)
+  public function destroy(Request $request)
   {
-    
+    $unicorn = Unicorn::find($request->get('id'));
+    $unicorn->delete();
+
+    return redirect()->route('unicorns.index');
   }
   
 }
