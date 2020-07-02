@@ -1,15 +1,23 @@
 <?php 
+namespace App\Http\Controllers;
 
-class BreedingController extends BaseController {
+use Illuminate\Http\Request;
 
-  /**
+use App\Models\Breeding;
+use App\Models\Company;
+
+class BreedingController extends Controller {
+
+ /**
    * Display a listing of the resource.
    *
    * @return Response
    */
   public function index()
   {
-    
+    $breedings = Breeding::all();
+
+    return view('breedings.index', compact('breedings'));
   }
 
   /**
@@ -20,8 +28,8 @@ class BreedingController extends BaseController {
   public function create()
   {
     $companies = Company::all();
-
-    return view('breedings.create', compact(companies));
+    
+    return view('breedings.create', compact('companies'));
   }
 
   /**
@@ -29,9 +37,18 @@ class BreedingController extends BaseController {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
+    $breeding = new breeding();
+
+    $breeding->name = $request->get('name');
+    $breeding->nb_unicorn = $request->get('nb_unicorn');
+    $breeding->unit_cost_HT = $request->get('unit_cost_HT');
+    $breeding->gender = $request->get('gender');
+    $breeding->company_id = $request->get('company_id');
+    $breeding->save();
     
+    return redirect()->route('breedings.index');
   }
 
   /**
@@ -42,7 +59,8 @@ class BreedingController extends BaseController {
    */
   public function show($id)
   {
-    
+    $breeding = breeding::with('company')->find($id);
+    return view('breedings.show', compact('breeding'));
   }
 
   /**
@@ -53,7 +71,7 @@ class BreedingController extends BaseController {
    */
   public function edit($id)
   {
-    $breeding = Breeding::find($id);
+    $breeding = breeding::find($id);
 
     return view('breedings.edit', compact('breeding'));
   }
@@ -64,9 +82,17 @@ class BreedingController extends BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function update($id)
+  public function update($id, Request $request)
   {
-    
+    $breeding = breeding::find($id);
+    $breeding->name = $request->get('name');
+    $breeding->nb_unicorn = $request->get('nb_unicorn');
+    $breeding->unit_cost_HT = $request->get('unit_cost_HT');
+    $breeding->gender = $request->get('gender');
+    $breeding->company_id = $request->get('company_id');
+    $breeding->save();
+        
+    return redirect()->route('breedings.index');
   }
 
   /**
@@ -75,9 +101,12 @@ class BreedingController extends BaseController {
    * @param  int  $id
    * @return Response
    */
-  public function destroy($id)
+  public function destroy(Request $request)
   {
-    
+    $breeding = breeding::find($request->get('id'));
+    $breeding->delete();
+
+    return redirect()->route('breedings.index');
   }
   
 }
