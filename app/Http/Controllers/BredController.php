@@ -44,7 +44,7 @@ class BredController extends Controller {
     $current_user = Auth::user();
 
     
-    $bred->company_id = $user['id'];
+    $bred->company_id = $current_user['company_id'];
     $bred->save();
 
     return redirect()->route('breds.index');
@@ -58,7 +58,7 @@ class BredController extends Controller {
    */
   public function show($id)
   {
-    $bred = bred::with('company')->find($id);
+    $bred = Bred::with('company')->find($id);
     return view('breds.show', compact('bred'));
   }
 

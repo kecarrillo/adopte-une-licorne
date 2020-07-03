@@ -43,7 +43,7 @@
                             <div class="row">
                                 <span class="col-10">
                                     <a href="{{ route('breds.show', $bred->id) }}">
-                                        {{ $bred->legal_status }} {{ $bred->bred_name }}
+                                        {{ $bred->date }} {{ $bred->company_id }}
                                     </a>
                                 </span>
                                 <span class="col-2">
