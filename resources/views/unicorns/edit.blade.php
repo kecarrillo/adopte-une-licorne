@@ -36,24 +36,24 @@
 
                                 <div class="form-group">
                                     <div class="row">
-                                        <label for="age" class="col-4">Son âge</label>
-                                        @if(!is_null($unicorn->age))
-                                        <input id="age" type="number" min="0" name="age"
-                                            value="{{ $unicorn->age }}" class="form-control col">
+                                        <label for="name" class="col-4">Son nom</label>
+                                        @if(!is_null($unicorn->name))
+                                            <input id="name" type="text" name="name"
+                                                   value="{{ $unicorn->name }}" class="form-control col">
                                         @else
-                                        <input id="age" type="number" min="0" name="age" class="form-control col">
+                                            <input id="name" type="text" name="name" class="form-control col">
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="row">
-                                        <label for="name" class="col-4">Son nom</label>
-                                        @if(!is_null($unicorn->name))
-                                        <input id="name" type="text" name="name"
-                                            value="{{ $unicorn->name }}" class="form-control col">
+                                        <label for="age" class="col-4">Son âge</label>
+                                        @if(!is_null($unicorn->age))
+                                        <input id="age" type="number" min="0" name="age"
+                                            value="{{ $unicorn->age }}" class="form-control col">
                                         @else
-                                        <input id="name" type="text" name="name" class="form-control col">
+                                        <input id="age" type="number" min="0" name="age" class="form-control col">
                                         @endif
                                     </div>
                                 </div>

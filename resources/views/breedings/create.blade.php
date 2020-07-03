@@ -48,10 +48,10 @@
                             <div class="form-group">
                                 <label for="gender">Genre de l'élevage</label>
                                 <select class="form-control" id="gender" name="gender">
-                                    <option value="female" selected>Femelles</option>
-                                    <option value="male">Mâles</option>
-                                    <option value="alien">Alien</option>
-                                    <option value="mixed">Mixte</option>
+                                    <option value="Femelle" selected>Femelle</option>
+                                    <option value="Mâle">Mâle</option>
+                                    <option value="Alien">Alien</option>
+                                    <option value="Mixte">Mixte</option>
                                 </select>
                             </div>
 
