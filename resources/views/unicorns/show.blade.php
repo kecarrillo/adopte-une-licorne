@@ -79,8 +79,14 @@
                             <p class="col-4"><strong>Nombre de reproductions:</strong></p>
                             <p class="col">{{ $unicorn->nb_mating }}</p>
                         </div>
-
+                        <br>
+                        <p>Vous convient-elle?</p>
+                        <a href="{{ route('breds.create') }}">
+                            <button  type="submit" class="btn btn-primary">LOUEZ LA</button>
+                        </a>
                     </div>
+                    
+                    
                 </div>
 
             </div>

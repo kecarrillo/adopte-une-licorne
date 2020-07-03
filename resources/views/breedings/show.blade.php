@@ -69,8 +69,12 @@
                         </div>
 
                         <br>
-
+                        <p>Si cela vous intéresse</p>
+                        <a href="{{ route('commands.create') }}">
+                            <button  type="submit" class="btn btn-success">COMMANDEZ EN</button>
+                        </a>
                     </div>
+                    
                 </div>
 
             </div>
