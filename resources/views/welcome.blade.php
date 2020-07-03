@@ -96,7 +96,6 @@
                     <a href="{{ route('companies.index') }}">Entreprises</a>
                     <a href="{{ route('unicorns.index') }}">Licornes</a>
                     <a href="{{ route('breedings.index') }}">Elevages</a>
-                    <a href="{{ route('customers.create') }}">Devenir client</a>
                 </div>
             </div>
         </div>

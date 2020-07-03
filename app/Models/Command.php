@@ -8,13 +8,7 @@ class Command extends Model {
 
 	protected $table = 'commands';
 	public $timestamps = true;
-	protected $fillable = array('breeding_id', 'customer_id', 'quantity');
-	protected $visible = array('breeding_id', 'customer_id', 'quantity');
-
-	public function customers()
-	{
-		return $this->belongsTo('App\Models\Customer', 'customer_id');
-	}
+	protected $visible = array('breeding_id', 'quantity');
 
 	public function breedings()
 	{

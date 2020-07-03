@@ -11,7 +11,6 @@ class CreateCommandsTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->integer('breeding_id')->unsigned()->nullable();
-			$table->integer('customer_id')->unsigned()->nullable();
 			$table->integer('quantity')->default('1');
 		});
 	}

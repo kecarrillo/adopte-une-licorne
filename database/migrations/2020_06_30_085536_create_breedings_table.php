@@ -13,7 +13,7 @@ class CreateBreedingsTable extends Migration {
 			$table->string('name', 40);
 			$table->integer('nb_unicorn')->default('1');
 			$table->decimal('unit_cost_HT', 12,2);
-			$table->enum('gender', array('"male"', '"female"', '"alien"', '"mixed"'));
+			$table->enum('gender', array('male', 'female', 'alien', 'mixed'));
 			$table->integer('company_id')->unsigned()->nullable();
 		});
 	}

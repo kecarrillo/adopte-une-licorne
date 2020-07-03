@@ -55,7 +55,6 @@ class CompanyController extends Controller {
       $company = Company::create([
           'company_name' => $request->get('company_name'),
           'legal_status' => $request->get('legal_status'),
-          'customer_id' => $request->get('customer_id', null),
           'contact_id' => $contact['id'],
           'bred_id' => $request->get('bred_id',null),
           'unicorn_id' => $request->get('unicorn_id', null),
@@ -119,7 +118,6 @@ class CompanyController extends Controller {
 
       $company->company_name = $request->get('company_name');
       $company->legal_status = $request->get('legal_status');
-      $company->customer_id = $request->get('customer_id');
       $company->contact_id = $request->get('contact_id');
       $company->bred_id = $request->get('bred_id');
       $company->unicorn_id = $request->get('unicorn_id');

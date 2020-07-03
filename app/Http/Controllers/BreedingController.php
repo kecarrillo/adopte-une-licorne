@@ -48,7 +48,7 @@ class BreedingController extends Controller {
     $breeding->gender = $request->get('gender');
     $breeding->company_id = $current_user->company_id;
     $breeding->save();
-    
+
     return redirect()->route('breedings.index');
   }
 

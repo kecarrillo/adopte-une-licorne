@@ -17,7 +17,6 @@ class CreateContactsTable extends Migration {
 			$table->string('zip_code', 8);
 			$table->string('country', 60);
 			$table->integer('company_id')->unsigned()->nullable();
-			$table->integer('customer_id')->unsigned()->nullable();
 		});
 	}
 

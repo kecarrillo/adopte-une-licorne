@@ -29,17 +29,6 @@ Route::put('/entreprises/{id}', 'CompanyController@update')->name('companies.upd
 Route::delete('/entreprises', 'CompanyController@destroy')->name('companies.destroy');
 
 /**
- * Clients
- */
-Route::get('/clients', 'CustomerController@index')->name('customers.index');
-Route::get('/clients/{id}/show', 'CustomerController@show')->name('customers.show');
-Route::get('/clients/create', 'CustomerController@create')->name('customers.create');
-Route::get('/clients/{id}/edit', 'CustomerController@edit')->name('customers.edit');
-Route::post('/clients', 'CustomerController@store')->name('customers.store');
-Route::put('/clients/{id}', 'CustomerController@update')->name('customers.update');
-Route::delete('/clients', 'CustomerController@destroy')->name('customers.destroy');
-
-/**
  * Licornes de reproduction
  */
 Route::get('/licornes', 'UnicornController@index')->name('unicorns.index');

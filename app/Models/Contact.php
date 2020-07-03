@@ -16,7 +16,6 @@ class Contact extends Model {
 		'zip_code',
 		'country',
 		'company_id',
-		'customer_id'
 	);
 	protected $visible = array(
 		'email',
@@ -26,13 +25,7 @@ class Contact extends Model {
 		'zip_code',
 		'country',
 		'company_id',
-		'customer_id'
 	);
-
-	public function customers()
-	{
-		return $this->belongsTo(Customer::class, 'customer_id');
-	}
 
 	public function companies()
 	{
