@@ -32,15 +32,15 @@
 
                             <div class="form-group">
                                 <div class="row">
-                                    <label for="age" class="col-4">Age</label>
-                                    <input id="age" type="number" min="0" class="form-control col" name="age" >
+                                    <label for="name" class="col-4">Nom</label>
+                                    <input id="name" type="text" class="form-control col" name="name" >
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="row">
-                                    <label for="name" class="col-4">Nom</label>
-                                    <input id="name" type="text" class="form-control col" name="name" >
+                                    <label for="age" class="col-4">Age</label>
+                                    <input id="age" type="number" min="0" class="form-control col" name="age" >
                                 </div>
                             </div>
 

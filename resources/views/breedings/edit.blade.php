@@ -28,7 +28,7 @@
                             @csrf
                             @method('PUT')
 
-                            fieldset>
+                            <fieldset>
 
                             <legend class="text-primary">{{$breeding->name}}</legend>
                             <br>
@@ -46,20 +46,20 @@
                                 <div class="form-group">
                                     <label for="nb_unicorn" class="col-4">Nombre de cornes</label>
                                         @if(!is_null($breeding->nb_unicorn))
-                                        <input id="nb_unicorn" type="text" name="nb_unicorn" class="form-control col"
+                                        <input id="nb_unicorn" type="number" min="0" name="nb_unicorn" class="form-control col"
                                             value="{{ $breeding->nb_unicorn }}">
                                         @else
-                                        <input id="nb_unicorn" type="text" name="nb_unicorn" class="form-control col">
+                                        <input id="nb_unicorn" type="number" min="0" name="nb_unicorn" class="form-control col">
                                         @endif
                                 </div>
 
                                 <div class="form-group">
                                     <label for="unit_cost_HT" class="col-4">Coût par tête</label>
                                         @if(!is_null($breeding->unit_cost_HT))
-                                        <input id="unit_cost_HT" type="text" name="unit_cost_HT" class="form-control col"
+                                        <input id="unit_cost_HT" type="number" min="0" name="unit_cost_HT" class="form-control col"
                                             value="{{ $breeding->unit_cost_HT }}">
                                         @else
-                                        <input id="unit_cost_HT" type="text" name="unit_cost_HT" class="form-control col">
+                                        <input id="unit_cost_HT" type="number" min="0" name="unit_cost_HT" class="form-control col">
                                         @endif
                                 </div>
 
@@ -82,6 +82,8 @@
                                             </select>
                                         @endif
                                 </div>
+                                </fieldset>
+                            <br>
 
                                 <button type="submit" class="btn btn-primary">Envoyer</button>
                         </form>

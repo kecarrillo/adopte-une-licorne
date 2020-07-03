@@ -37,12 +37,12 @@
 
                             <div class="form-group">
                                 <label for="nb_unicorn">Nombre de licornes dans cet élevage</label>
-                                <input id="nb_unicorn" type="text" class="form-control" name="nb_unicorn" >
+                                <input id="nb_unicorn" type="number" min="0" class="form-control" name="nb_unicorn" >
                             </div>
 
                             <div class="form-group">
                                 <label for="unit_cost_HT">Prix d'une ces bêtes</label>
-                                <input id="unit_cost_HT" type="text" class="form-control" name="unit_cost_HT" >
+                                <input id="unit_cost_HT" type="number" min="0" class="form-control" name="unit_cost_HT" >
                             </div>
 
                             <div class="form-group">
