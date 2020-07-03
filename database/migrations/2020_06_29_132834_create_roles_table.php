@@ -16,6 +16,10 @@ class CreateRolesTable extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name', 20);
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete('SET NULL');
         });
     }
 

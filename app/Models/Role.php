@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model {
@@ -11,9 +12,9 @@ class Role extends Model {
 	protected $fillable = array('name');
 	protected $visible = array('name');
 
-	public function roles()
+	public function users()
 	{
-		return $this->belongsToMany('User', 'roles');
+		return $this->belongsTo(User::class, 'user_id');
 	}
 
 }

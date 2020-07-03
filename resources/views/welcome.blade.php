@@ -92,11 +92,21 @@
                     Adopte une licorne
                 </div>
 
-                <div class="links">
-                    <a href="{{ route('companies.index') }}">Entreprises</a>
-                    <a href="{{ route('unicorns.index') }}">Licornes</a>
-                    <a href="{{ route('breedings.index') }}">Elevages</a>
-                </div>
+                @auth
+                    <div class="links">
+                        <a href="{{ route('companies.index') }}">Entreprises</a>
+                        <a href="{{ route('unicorns.index') }}">Licornes</a>
+                        <a href="{{ route('breedings.index') }}">Elevages</a>
+                        <a href="{{ route('users.index') }}">Panneau administration</a>
+                    </div>
+                @else
+                    <div class="links">
+                        <a href="{{ route('companies.index') }}">Entreprises</a>
+                        <a href="{{ route('unicorns.index') }}">Licornes</a>
+                        <a href="{{ route('breedings.index') }}">Elevages</a>
+                    </div>
+                @endauth
+
             </div>
         </div>
     </body>

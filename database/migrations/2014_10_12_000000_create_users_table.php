@@ -20,9 +20,12 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->bigInteger('company_id')->unsigned()->nullable();
+            $table->bigInteger('role_id')->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->foreign('company_id')->references('id')->on('companies')
+                ->onDelete('SET NULL');
+            $table->foreign('role_id')->references('id')->on('roles')
                 ->onDelete('SET NULL');
         });
     }
