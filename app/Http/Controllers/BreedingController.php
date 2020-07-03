@@ -60,7 +60,7 @@ class BreedingController extends Controller {
    */
   public function show($id)
   {
-    $breeding = breeding::with('company')->find($id);
+    $breeding = breeding::with('companies')->find($id);
     return view('breedings.show', compact('breeding'));
   }
 
