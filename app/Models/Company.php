@@ -38,7 +38,7 @@ class Company extends Model {
 
 	public function breedings()
 	{
-		return $this->hasMany('App\Models\Breeding', 'breeding_id');
+		return $this->hasMany(Breeding::class, 'company_id');
 	}
 
     public function users()

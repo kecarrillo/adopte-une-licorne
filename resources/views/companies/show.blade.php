@@ -107,17 +107,17 @@
                         <h3 class="text-success">Elevages</h3>
                         <br>
 
-{{--                        @if(!is_null($company->breedings))--}}
-{{--                            @foreach($company->breedings as $breeding)--}}
-{{--                                <li>--}}
-{{--                                    <a href="{{ route('breedings.show', $breeding->id) }}">--}}
-{{--                                        {{ $breeding->name }}--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                            @endforeach--}}
-{{--                        @else--}}
-{{--                            <p>Pas d'élevage disponible pour la vente.</p>--}}
-{{--                        @endif--}}
+                        @if(!is_null($company->breedings))
+                            @foreach($company->breedings as $breeding)
+                                <li>
+                                    <a href="{{ route('breedings.show', $breeding->id) }}">
+                                        {{ $breeding->name }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        @else
+                            <p>Pas d'élevage disponible pour la vente.</p>
+                        @endif
 
                     </div>
                 </div>
