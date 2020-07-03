@@ -8,7 +8,10 @@ class Command extends Model {
 
 	protected $table = 'commands';
 	public $timestamps = true;
-	protected $visible = array('breeding_id', 'quantity');
+	protected $visible = array(
+		'breeding_id',
+		'quantity'
+	);
 
 	public function breedings()
 	{

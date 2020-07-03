@@ -16,7 +16,7 @@
                             </div>
                             <div class="col-9">
                                 <h1 class="text-primary">
-                                    {{ $bred->name }}
+                                    {{ $bred->date }}
                                 </h1>
                             </div>
                             <div class="col-1">
@@ -44,7 +44,7 @@
 
                     <div class="card-body">
 
-                        <h2 class="text-success">Détails</h2>
+                        <h2 class="text-success">Acte de saillie</h2>
 
                         <br>
 
@@ -53,30 +53,12 @@
                             <p class="col">{{ $bred->age }}</p>
                         </div>
                         <div class="row">
+                            <p class="col-4"><strong>Bête:</strong></p>
+                            <p class="col">{{ $bred->unicorns->name }}</p>
+                        </div>
+                        <div class="row">
                             <p class="col-4"><strong>Propriétaire:</strong></p>
                             <p class="col">{{ $bred->companies->legal_status }} {{ $bred->companies->company_name }}</p>
-                        </div>
-
-                        <br>
-
-                        <h2 class="text-success">Location pour reproduction</h2>
-                        <br>
-
-                        <div class="row">
-                            <p class="col-4"><strong>Coût unitaire du service:</strong></p>
-                            <p class="col">{{ $bred->unit_cost_HT }} €</p>
-                        </div>
-                        <div class="row">
-                            <p class="col-4"><strong>Début de chaleur:</strong></p>
-                            <p class="col">{{ $bred->date_start_mating_season }}</p>
-                        </div>
-                        <div class="row">
-                            <p class="col-4"><strong>Période de chaleur:</strong></p>
-                            <p class="col">{{ $bred->mating_season }}</p>
-                        </div>
-                        <div class="row">
-                            <p class="col-4"><strong>Nombre de reproductions:</strong></p>
-                            <p class="col">{{ $bred->nb_mating }}</p>
                         </div>
 
                     </div>
