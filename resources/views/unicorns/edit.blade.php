@@ -39,9 +39,9 @@
                                         <label for="age" class="col-4">Son âge</label>
                                         @if(!is_null($unicorn->age))
                                         <input id="age" type="number" min="0" name="age"
-                                            value="{{ $unicorn->age }}" class="col">
+                                            value="{{ $unicorn->age }}" class="form-control col">
                                         @else
-                                        <input id="age" type="number" min="0" name="age" class="col">
+                                        <input id="age" type="number" min="0" name="age" class="form-control col">
                                         @endif
                                     </div>
                                 </div>
@@ -51,9 +51,9 @@
                                         <label for="name" class="col-4">Son nom</label>
                                         @if(!is_null($unicorn->name))
                                         <input id="name" type="text" name="name"
-                                            value="{{ $unicorn->name }}" class="col">
+                                            value="{{ $unicorn->name }}" class="form-control col">
                                         @else
-                                        <input id="name" type="text" name="name" class="col">
+                                        <input id="name" type="text" name="name" class="form-control col">
                                         @endif
                                     </div>
                                 </div>
@@ -63,9 +63,9 @@
                                         <label for="mating_season" class="col-4">Sa période d'accouplement</label>
                                         @if(!is_null($unicorn->mating_season))
                                         <input id="mating_season" type="number" min="0" name="mating_season"
-                                            value="{{ $unicorn->mating_season }}" class="col">
+                                            value="{{ $unicorn->mating_season }}" class="form-control col">
                                         @else
-                                        <input id="mating_season" type="number" min="0" name="mating_season" class="col">
+                                        <input id="mating_season" type="number" min="0" name="mating_season" class="form-control col">
                                         @endif
                                     </div>
                                 </div>
@@ -75,9 +75,10 @@
                                         <label for="date_start_mating_season" class="col-4">Début de la période</label>
                                         @if(!is_null($unicorn->date_start_mating_season))
                                         <input id="date_start_mating_season" type="date" name="date_start_mating_season"
-                                            value="{{ $unicorn->date_start_mating_season }}" class="col">
+                                            value="{{ $unicorn->date_start_mating_season }}" class="form-control col">
                                         @else
-                                        <input id="date_start_mating_season" type="date" name="date_start_mating_season" class="col">
+                                        <input id="date_start_mating_season" type="date" name="date_start_mating_season"
+                                               class="form-control col">
                                         @endif
                                     </div>
                                 </div>
@@ -87,9 +88,9 @@
                                         <label for="nb_mating" class="col-4"> Son nombre de partenaires</label>
                                         @if(!is_null($unicorn->nb_mating))
                                         <input id="nb_mating" type="number" min="0" max="2" name="nb_mating"
-                                            value="{{ $unicorn->nb_mating }}" class="col">
+                                            value="{{ $unicorn->nb_mating }}" class="form-control col">
                                         @else
-                                        <input id="nb_mating" type="number" min="0" name="nb_mating" class="col">
+                                        <input id="nb_mating" type="number" min="0" name="nb_mating" class="form-control col">
                                         @endif
                                     </div>
                                 </div>
@@ -99,9 +100,9 @@
                                         <label for="unit_cost_HT" class="col-4">Son prix (en €)</label>
                                         @if(!is_null($unicorn->unit_cost_HT))
                                         <input id="unit_cost_HT" type="number" min="0" name="unit_cost_HT"
-                                            value="{{ $unicorn->unit_cost_HT }}" class="col">
+                                            value="{{ $unicorn->unit_cost_HT }}" class="form-control col">
                                         @else
-                                        <input id="unit_cost_HT" type="number" min="0" name="unit_cost_HT" class="col">
+                                        <input id="unit_cost_HT" type="number" min="0" name="unit_cost_HT" class="form-control col">
                                         @endif
                                     </div>
                                 </div>

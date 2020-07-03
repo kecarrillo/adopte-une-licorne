@@ -52,6 +52,7 @@
                             <p class="col-4"><strong>Age:</strong></p>
                             <p class="col">{{ $unicorn->age }}</p>
                         </div>
+
                         <div class="row">
                             <p class="col-4"><strong>Propriétaire:</strong></p>
                             <p class="col">{{ $unicorn->companies->legal_status }} {{ $unicorn->companies->company_name }}</p>

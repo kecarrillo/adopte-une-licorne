@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -28,7 +28,7 @@ class BreedingController extends Controller {
   public function create()
   {
     $companies = Company::all();
-    
+
     return view('breedings.create', compact('companies'));
   }
 
@@ -39,14 +39,14 @@ class BreedingController extends Controller {
    */
   public function store(Request $request)
   {
-    $current_user = Auth::user();
-
+    $current_user = auth()->user();
     $breeding = new breeding();
+
     $breeding->name = $request->get('name');
     $breeding->nb_unicorn = $request->get('nb_unicorn');
     $breeding->unit_cost_HT = $request->get('unit_cost_HT');
     $breeding->gender = $request->get('gender');
-    $breeding->company_id = $request->get('company_id');
+    $breeding->company_id = $current_user->company_id;
     $breeding->save();
     
     return redirect()->route('breedings.index');
@@ -92,7 +92,7 @@ class BreedingController extends Controller {
     $breeding->gender = $request->get('gender');
     $breeding->company_id = $request->get('company_id');
     $breeding->save();
-        
+
     return redirect()->route('breedings.index');
   }
 
@@ -109,7 +109,7 @@ class BreedingController extends Controller {
 
     return redirect()->route('breedings.index');
   }
-  
+
 }
 
 ?>
